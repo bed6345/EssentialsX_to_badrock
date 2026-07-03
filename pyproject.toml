@@ -1,0 +1,32 @@
+# ============================================================
+# EssentialsBE - ปลั๊กอิน Essentials สำหรับ Endstone (Minecraft Bedrock)
+#
+# กติกาการตั้งชื่อของ Endstone:
+#   - ชื่อ distribution ต้องขึ้นต้นด้วย "endstone-"  -> endstone-essentials-be
+#   - ชื่อ entry point ต้องตรงกับส่วนที่เหลือ        -> essentials_be
+#   ปลั๊กอินจะถูกโหลดในเซิร์ฟเวอร์ด้วยชื่อ "essentials_be"
+#   (โฟลเดอร์ข้อมูล: plugins/essentials_be/)
+# ============================================================
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "endstone-essentials-be"
+version = "1.0.0"
+description = "EssentialsBE - Home / Warp / Spawn / TPA / Kit / Back / RTP พร้อม Form UI สำหรับ Endstone"
+authors = [{ name = "bed6345" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pyyaml>=6.0"]
+keywords = ["endstone", "minecraft", "bedrock", "essentials", "plugin"]
+
+# จุดที่ Endstone ใช้ค้นหาคลาสหลักของปลั๊กอิน
+[project.entry-points.endstone]
+essentials_be = "endstone_essentials_be:EssentialsBE"
+
+# ให้ hatchling แพ็กโฟลเดอร์ src/endstone_essentials_be ลงใน wheel
+# (ไฟล์ resource เช่น config.yml, kits.yml, messages/*.yml จะถูกรวมเข้าไปด้วย)
+[tool.hatch.build.targets.wheel]
+packages = ["src/endstone_essentials_be"]

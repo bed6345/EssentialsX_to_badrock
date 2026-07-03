@@ -1,0 +1,128 @@
+# ============================================================
+# EssentialsBE - English messages
+# Supports placeholders like {player} {home} {warp} {kit} {seconds} {time}
+# and Minecraft § color codes
+# ============================================================
+
+general:
+  player-only: "§cThis command can only be used by players in game"
+  player-not-found: "§cPlayer '{player}' not found"
+  command-error: "§cAn internal error occurred, please contact an admin"
+
+teleport:
+  warmup: "§eDon't move! Teleporting in §a{seconds} seconds§e..."
+  warmup-cancelled-move: "§cTeleport cancelled: you moved"
+  warmup-cancelled-damage: "§cTeleport cancelled: you took damage"
+  cooldown: "§cYou must wait {time} before teleporting again"
+  already-pending: "§cYou already have a teleport in progress"
+  failed: "§cTeleport failed, please try again"
+
+home:
+  set: "§aHome '§e{home}§a' set"
+  set-limit: "§cYou can only have {max} homes (delete one first)"
+  deleted: "§aHome '§e{home}§a' deleted"
+  not-found: "§cHome '{home}' not found"
+  none: "§cYou have no homes yet (use /sethome)"
+  teleported: "§aTeleported to home '§e{home}§a'"
+  list: "§6Your homes: §f{homes}"
+  limit-info: "§7Using {count}/{max} homes"
+  form-title: "§l§9Select Home"
+  form-content: "Tap a button to teleport to that home"
+  delete-form-title: "§l§4Delete Home"
+  delete-form-content: "Select the home to delete"
+  confirm-delete: "Delete home '§e{home}§r' ?\n§7This cannot be undone"
+
+warp:
+  set: "§aWarp '§e{warp}§a' created"
+  deleted: "§aWarp '§e{warp}§a' deleted"
+  not-found: "§cWarp '{warp}' not found"
+  none: "§cNo warps available to you"
+  no-permission: "§cYou don't have permission to use warp '{warp}'"
+  teleported: "§aTeleported to '§e{warp}§a'"
+  list: "§6Available warps: §f{warps}"
+  form-title: "§l§9Select Warp"
+  form-content: "Tap a button to teleport"
+
+spawn:
+  teleported: "§aTeleported to spawn"
+  set: "§aServer spawn set to this location"
+  not-set: "§cServer spawn is not set (admin: use /setspawn)"
+
+tpa:
+  sent: "§aTeleport request sent to §e{player}§a (/tpacancel to cancel)"
+  received: "§e{player}§a wants to teleport to you"
+  howto: "§7Type §a/tpaccept§7 to accept or §c/tpdeny§7 to deny"
+  request-form-title: "§l§9Teleport Request"
+  request-form-content: "§e{player}§r wants to teleport to you\nAccept?"
+  accept-button: "§2Accept"
+  deny-button: "§4Deny"
+  accepted-target: "§aAccepted §e{player}§a's request"
+  accepted-sender: "§e{player}§a accepted your request"
+  teleported: "§aTeleported to §e{player}§a"
+  denied-target: "§cDenied §e{player}§c's request"
+  denied-sender: "§c{player} denied your teleport request"
+  expired-sender: "§cYour request to {player} expired"
+  expired-target: "§cRequest from {player} expired"
+  cancelled: "§eCancelled your request to {player}"
+  cancelled-target: "§e{player} cancelled their request"
+  player-left: "§cRequest cancelled: {player} left the game"
+  self: "§cYou cannot send a request to yourself"
+  target-toggle-off: "§c{player} has teleport requests disabled"
+  no-players: "§cNo players available right now"
+  no-requests: "§cYou have no pending requests"
+  no-request-from: "§cNo request from '{player}'"
+  no-outgoing: "§cYou have no outgoing request"
+  toggle-on: "§aTeleport requests enabled (status: §2ON§a)"
+  toggle-off: "§eTeleport requests disabled (status: §4OFF§e)"
+  form-title: "§l§9Send Teleport Request (tpa)"
+  form-content: "Select a player to teleport to"
+  accept-form-title: "§l§9Select Request to Accept"
+  accept-form-content: "Multiple pending requests, pick one"
+  online-list: "§6Available players: §f{players}"
+  pending-list: "§6Pending from: §f{players} §7(/tpaccept <name>)"
+
+tpahere:
+  received: "§e{player}§a wants you to teleport to them"
+  request-form-content: "§e{player}§r wants you to teleport to them\nAccept?"
+  form-title: "§l§9Request Here (tpahere)"
+
+back:
+  none: "§cNo location to go back to"
+  teleported: "§aReturned to your previous location"
+
+rtp:
+  cooldown: "§cYou must wait {time} before random teleporting again"
+  fail: "§cCould not find a safe spot, please try again"
+  teleported: "§aRandomly teleported to §e{x}, {y}, {z}§a"
+
+tppos:
+  invalid: "§cInvalid coordinates (must be numbers)"
+  teleported: "§aTeleported to §e{x}, {y}, {z}§a"
+
+top:
+  teleported: "§aTeleported to the highest block"
+
+kit:
+  received: "§aReceived kit '§e{kit}§a'"
+  not-found: "§cKit '{kit}' not found"
+  no-permission: "§cYou don't have permission for kit '{kit}'"
+  cooldown: "§cKit '{kit}' available in {time}"
+  once: "§cKit '{kit}' is one-time only and you already claimed it"
+  none: "§cNo kits available to you"
+  list: "§6Available kits: §f{kits}"
+  dropped: "§eInventory full, some items were dropped on the ground"
+  form-title: "§l§9Select Kit"
+  form-content: "Tap a button to claim a kit"
+  button-cooldown: "{kit} §c({time} left)"
+  button-once: "{kit} §c(claimed)"
+
+form:
+  # yes/no are YAML reserved words, so the keys must be quoted
+  "yes": "§2Confirm"
+  "no": "§4Cancel"
+
+time:
+  day: "d"
+  hour: "h"
+  minute: "m"
+  second: "s"

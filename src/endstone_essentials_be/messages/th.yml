@@ -1,0 +1,128 @@
+# ============================================================
+# EssentialsBE - ข้อความภาษาไทย
+# รองรับ placeholder เช่น {player} {home} {warp} {kit} {seconds} {time}
+# และโค้ดสี § ของ Minecraft
+# ============================================================
+
+general:
+  player-only: "§cคำสั่งนี้ใช้ได้เฉพาะผู้เล่นในเกมเท่านั้น"
+  player-not-found: "§cไม่พบผู้เล่นชื่อ '{player}'"
+  command-error: "§cเกิดข้อผิดพลาดภายใน กรุณาแจ้งแอดมิน"
+
+teleport:
+  warmup: "§eอย่าขยับ! จะวาร์ปใน §a{seconds} วินาที§e..."
+  warmup-cancelled-move: "§cยกเลิกการวาร์ป: คุณขยับตัว"
+  warmup-cancelled-damage: "§cยกเลิกการวาร์ป: คุณถูกโจมตี"
+  cooldown: "§cต้องรออีก {time} ก่อนวาร์ปครั้งถัดไป"
+  already-pending: "§cคุณกำลังรอวาร์ปอยู่แล้ว"
+  failed: "§cวาร์ปไม่สำเร็จ กรุณาลองใหม่"
+
+home:
+  set: "§aตั้ง home '§e{home}§a' เรียบร้อย"
+  set-limit: "§cคุณมี home ได้สูงสุด {max} จุด (ลบอันเก่าก่อน)"
+  deleted: "§aลบ home '§e{home}§a' แล้ว"
+  not-found: "§cไม่พบ home ชื่อ '{home}'"
+  none: "§cคุณยังไม่มี home (ใช้ /sethome เพื่อตั้ง)"
+  teleported: "§aวาร์ปไป home '§e{home}§a' แล้ว"
+  list: "§6Home ของคุณ: §f{homes}"
+  limit-info: "§7ใช้ไป {count}/{max} จุด"
+  form-title: "§l§9เลือก Home"
+  form-content: "แตะปุ่มเพื่อวาร์ปไป home ที่ต้องการ"
+  delete-form-title: "§l§4ลบ Home"
+  delete-form-content: "เลือก home ที่ต้องการลบ"
+  confirm-delete: "ยืนยันลบ home '§e{home}§r' ?\n§7การลบไม่สามารถย้อนกลับได้"
+
+warp:
+  set: "§aสร้าง warp '§e{warp}§a' เรียบร้อย"
+  deleted: "§aลบ warp '§e{warp}§a' แล้ว"
+  not-found: "§cไม่พบ warp ชื่อ '{warp}'"
+  none: "§cยังไม่มี warp ที่คุณใช้ได้"
+  no-permission: "§cคุณไม่มีสิทธิ์ใช้ warp '{warp}'"
+  teleported: "§aวาร์ปไป '§e{warp}§a' แล้ว"
+  list: "§6Warp ที่ใช้ได้: §f{warps}"
+  form-title: "§l§9เลือก Warp"
+  form-content: "แตะปุ่มเพื่อวาร์ปไปจุดที่ต้องการ"
+
+spawn:
+  teleported: "§aวาร์ปไปจุด spawn แล้ว"
+  set: "§aตั้งจุด spawn ของเซิร์ฟเวอร์ที่ตำแหน่งนี้แล้ว"
+  not-set: "§cเซิร์ฟเวอร์ยังไม่ได้ตั้งจุด spawn (แอดมินใช้ /setspawn)"
+
+tpa:
+  sent: "§aส่งคำขอวาร์ปไปหา §e{player}§a แล้ว (พิมพ์ /tpacancel เพื่อยกเลิก)"
+  received: "§e{player}§a ขอวาร์ปมาหาคุณ"
+  howto: "§7พิมพ์ §a/tpaccept§7 เพื่อยอมรับ หรือ §c/tpdeny§7 เพื่อปฏิเสธ"
+  request-form-title: "§l§9คำขอวาร์ป"
+  request-form-content: "§e{player}§r ขอวาร์ปมาหาคุณ\nจะยอมรับหรือไม่?"
+  accept-button: "§2ยอมรับ"
+  deny-button: "§4ปฏิเสธ"
+  accepted-target: "§aยอมรับคำขอของ §e{player}§a แล้ว"
+  accepted-sender: "§e{player}§a ยอมรับคำขอของคุณแล้ว"
+  teleported: "§aวาร์ปหา §e{player}§a แล้ว"
+  denied-target: "§cปฏิเสธคำขอของ §e{player}§c แล้ว"
+  denied-sender: "§c{player} ปฏิเสธคำขอวาร์ปของคุณ"
+  expired-sender: "§cคำขอวาร์ปไปหา {player} หมดเวลาแล้ว"
+  expired-target: "§cคำขอวาร์ปจาก {player} หมดเวลาแล้ว"
+  cancelled: "§eยกเลิกคำขอวาร์ปไปหา {player} แล้ว"
+  cancelled-target: "§e{player} ยกเลิกคำขอวาร์ปแล้ว"
+  player-left: "§cคำขอถูกยกเลิก: {player} ออกจากเกมแล้ว"
+  self: "§cคุณไม่สามารถส่งคำขอหาตัวเองได้"
+  target-toggle-off: "§c{player} ปิดรับคำขอวาร์ปอยู่"
+  no-players: "§cตอนนี้ไม่มีผู้เล่นที่ส่งคำขอหาได้"
+  no-requests: "§cไม่มีคำขอวาร์ปค้างอยู่"
+  no-request-from: "§cไม่มีคำขอจาก '{player}'"
+  no-outgoing: "§cคุณไม่มีคำขอที่ส่งค้างอยู่"
+  toggle-on: "§aเปิดรับคำขอวาร์ปแล้ว (สถานะ: §2เปิด§a)"
+  toggle-off: "§eปิดรับคำขอวาร์ปแล้ว (สถานะ: §4ปิด§e)"
+  form-title: "§l§9ส่งคำขอวาร์ป (tpa)"
+  form-content: "เลือกผู้เล่นที่ต้องการวาร์ปไปหา"
+  accept-form-title: "§l§9เลือกคำขอที่จะยอมรับ"
+  accept-form-content: "มีหลายคำขอค้างอยู่ เลือกว่าจะรับของใคร"
+  online-list: "§6ผู้เล่นที่ส่งคำขอได้: §f{players}"
+  pending-list: "§6คำขอค้างจาก: §f{players} §7(พิมพ์ /tpaccept <ชื่อ>)"
+
+tpahere:
+  received: "§e{player}§a ขอให้คุณวาร์ปไปหาเขา"
+  request-form-content: "§e{player}§r ขอให้คุณวาร์ปไปหาเขา\nจะยอมรับหรือไม่?"
+  form-title: "§l§9ขอให้มาหา (tpahere)"
+
+back:
+  none: "§cยังไม่มีจุดให้ย้อนกลับ"
+  teleported: "§aกลับไปจุดก่อนหน้าแล้ว"
+
+rtp:
+  cooldown: "§cต้องรออีก {time} ก่อนสุ่มวาร์ปครั้งถัดไป"
+  fail: "§cหาจุดปลอดภัยไม่เจอ กรุณาลองใหม่อีกครั้ง"
+  teleported: "§aสุ่มวาร์ปไปที่ §e{x}, {y}, {z}§a แล้ว"
+
+tppos:
+  invalid: "§cพิกัดไม่ถูกต้อง (ต้องเป็นตัวเลข)"
+  teleported: "§aวาร์ปไปพิกัด §e{x}, {y}, {z}§a แล้ว"
+
+top:
+  teleported: "§aวาร์ปขึ้นบล็อกบนสุดแล้ว"
+
+kit:
+  received: "§aรับ kit '§e{kit}§a' เรียบร้อย"
+  not-found: "§cไม่พบ kit ชื่อ '{kit}'"
+  no-permission: "§cคุณไม่มีสิทธิ์ใช้ kit '{kit}'"
+  cooldown: "§ckit '{kit}' ต้องรออีก {time}"
+  once: "§ckit '{kit}' รับได้ครั้งเดียว และคุณรับไปแล้ว"
+  none: "§cไม่มี kit ที่คุณใช้ได้"
+  list: "§6Kit ที่ใช้ได้: §f{kits}"
+  dropped: "§eช่องเก็บของเต็ม ของบางส่วนถูกดรอปลงพื้นแล้ว"
+  form-title: "§l§9เลือก Kit"
+  form-content: "แตะปุ่มเพื่อรับชุดไอเทม"
+  button-cooldown: "{kit} §c(เหลือ {time})"
+  button-once: "{kit} §c(รับไปแล้ว)"
+
+form:
+  # ต้องใส่ quote ที่ชื่อคีย์ เพราะ yes/no เป็นคำสงวนของ YAML
+  "yes": "§2ยืนยัน"
+  "no": "§4ยกเลิก"
+
+time:
+  day: "วัน"
+  hour: "ชม."
+  minute: "นาที"
+  second: "วินาที"

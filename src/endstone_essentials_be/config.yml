@@ -1,0 +1,46 @@
+# ============================================================
+# EssentialsBE - ไฟล์ตั้งค่าหลัก
+# ไฟล์นี้จะถูกคัดลอกไปที่ plugins/essentials_be/config.yml ตอนเปิดครั้งแรก
+# แก้แล้วใช้ /reload หรือรีสตาร์ตเซิร์ฟเวอร์เพื่อให้มีผล
+# ============================================================
+
+# ภาษาข้อความ: th หรือ en (ไฟล์อยู่ใน messages/)
+language: th
+
+# เปิด/ปิดระบบ Form UI ทั้งหมด (ปิดแล้วทุกเมนูจะ fallback เป็นข้อความ)
+use-forms: true
+
+# จำนวน home เริ่มต้นต่อคน (ถ้าไม่มี permission essentials.sethome.multiple.<n>)
+default-homes: 3
+
+# true = ต้องมี permission essentials.warps.<ชื่อ> ถึงจะใช้ warp นั้นได้
+per-warp-permission: false
+
+# เด้ง MessageForm ถามผู้รับทันทีเมื่อมีคำขอ tpa เข้ามา
+# (ปิดถ้าไม่อยากให้ฟอร์มเด้งกลางการต่อสู้ - ผู้รับยังใช้ /tpaccept /tpdeny ได้)
+tpa-request-form: true
+
+# วินาทีก่อนคำขอ tpa หมดอายุอัตโนมัติ
+tpa-expire-seconds: 60
+
+# วินาทีที่ต้องยืนนิ่งก่อนวาร์ป (0 = วาร์ปทันที) ขยับ/โดนตี = ยกเลิก
+teleport-warmup: 3
+
+# วินาทีกันสแปมวาร์ป (0 = ไม่มี) ข้ามได้ด้วย essentials.teleport.timer.bypass
+teleport-cooldown: 3
+
+# ตั้งค่า /rtp (สุ่มวาร์ป)
+rtp:
+  min-radius: 100      # ระยะใกล้สุดจากจุด center
+  max-radius: 1000     # ระยะไกลสุดจากจุด center
+  center-x: 0          # จุดศูนย์กลางการสุ่ม
+  center-z: 0
+  cooldown: 60         # วินาที cooldown ต่อคน
+  max-attempts: 15     # จำนวนครั้งที่ลองหาจุดปลอดภัยก่อนยอมแพ้
+
+# ระบบดักคำสั่ง vanilla (ผ่าน PlayerCommandEvent)
+interceptors:
+  vanilla-tp-back: true   # ดัก /tp เพื่อบันทึกจุด /back ก่อนวาร์ป
+
+# บันทึกข้อมูลผู้เล่นอัตโนมัติทุกกี่นาที
+autosave-minutes: 5
