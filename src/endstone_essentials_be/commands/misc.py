@@ -1,10 +1,11 @@
 # ============================================================
-# misc.py (commands) - /back /rtp /tppos /top
+# misc.py (commands) - /back /rtp /tppos /top /tps
 #
 # /back: กลับจุดก่อนวาร์ป/จุดตายล่าสุด
 # /rtp:  สุ่มวาร์ปหาจุดปลอดภัย (ไม่ลงลาวา/น้ำ/ช่องว่าง) + cooldown ต่อคน
 # /tppos: วาร์ปไปพิกัด (แอดมิน)
 # /top:  ขึ้นบล็อกบนสุด ณ จุดปัจจุบัน
+# /tps:  ดู TPS / MSPT ของเซิร์ฟเวอร์ และ ping ของผู้ใช้คำสั่ง
 # ============================================================
 
 from __future__ import annotations
@@ -38,6 +39,7 @@ class MiscCommands:
             "rtp": self.rtp,
             "tppos": self.tppos,
             "top": self.top,
+            "tps": self.tps,
         }
 
     def _as_player(self, sender: CommandSender):
@@ -163,3 +165,44 @@ class MiscCommands:
                         loc.block_z + 0.5, loc.pitch, loc.yaw)
         self._plugin.teleport.request_teleport(player, dest, "top.teleported", {})
         return True
+
+    # ---------- /tps ----------
+
+    def tps(self, sender: CommandSender, args: list[str]) -> bool:
+        """แสดง TPS/MSPT ของเซิร์ฟเวอร์ (คอนโซลใช้ได้)
+        ถ้าผู้ใช้เป็นผู้เล่นจะแสดง ping ของตัวเองด้วย"""
+        msg = self._plugin.messages
+        server = self._plugin.server
+
+        msg.send(sender, "tps.header")
+        msg.send(sender, "tps.tps",
+                 current=self._format_tps(float(server.current_tps)),
+                 average=self._format_tps(float(server.average_tps)))
+        msg.send(sender, "tps.mspt", mspt=f"{float(server.average_mspt):.1f}")
+
+        if isinstance(sender, Player):
+            msg.send(sender, "tps.ping",
+                     ping=self._format_ping(self._ping_ms(sender)))
+        return True
+
+    @staticmethod
+    def _format_tps(tps: float) -> str:
+        """ใส่สีตามสุขภาพเซิร์ฟเวอร์: เขียว >= 18, เหลือง >= 15, แดงต่ำกว่านั้น
+        (เพดานแสดงผลที่ 20.0 เหมือน EssentialsX)"""
+        color = "§a" if tps >= 18 else ("§e" if tps >= 15 else "§c")
+        return f"{color}{min(tps, 20.0):.1f}"
+
+    @staticmethod
+    def _format_ping(ms: int) -> str:
+        """ใส่สีตามความหน่วง: เขียว < 100ms, เหลือง < 200ms, แดงมากกว่านั้น"""
+        color = "§a" if ms < 100 else ("§e" if ms < 200 else "§c")
+        return f"{color}{ms} ms"
+
+    @staticmethod
+    def _ping_ms(player: Player) -> int:
+        # Endstone คืน ping เป็น datetime.timedelta (เผื่อบางเวอร์ชันคืนตัวเลขตรง ๆ)
+        ping = player.ping
+        total_seconds = getattr(ping, "total_seconds", None)
+        if callable(total_seconds):
+            return int(total_seconds() * 1000)
+        return int(ping)

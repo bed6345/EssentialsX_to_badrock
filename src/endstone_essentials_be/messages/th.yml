@@ -102,6 +102,12 @@ tppos:
 top:
   teleported: "§aวาร์ปขึ้นบล็อกบนสุดแล้ว"
 
+tps:
+  header: "§6----- สถานะเซิร์ฟเวอร์ -----"
+  tps: "§6TPS: {current} §7(เฉลี่ย: {average}§7)"
+  mspt: "§6MSPT: §f{mspt} ms §7(ยิ่งต่ำยิ่งดี ปกติไม่เกิน 50)"
+  ping: "§6Ping ของคุณ: {ping}"
+
 kit:
   received: "§aรับ kit '§e{kit}§a' เรียบร้อย"
   not-found: "§cไม่พบ kit ชื่อ '{kit}'"
