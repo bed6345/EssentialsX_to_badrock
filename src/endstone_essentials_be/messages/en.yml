@@ -102,6 +102,12 @@ tppos:
 top:
   teleported: "§aTeleported to the highest block"
 
+tps:
+  header: "§6----- Server status -----"
+  tps: "§6TPS: {current} §7(average: {average}§7)"
+  mspt: "§6MSPT: §f{mspt} ms §7(lower is better, normally <= 50)"
+  ping: "§6Your ping: {ping}"
+
 kit:
   received: "§aReceived kit '§e{kit}§a'"
   not-found: "§cKit '{kit}' not found"

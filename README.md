@@ -93,6 +93,7 @@ plugins/essentials_be/
 | `/rtp` | สุ่มวาร์ปหาจุดปลอดภัย (มี cooldown ต่อคน) | `essentials.rtp` | ✅ |
 | `/tppos <x> <y> <z>` | วาร์ปไปพิกัด | `essentials.tppos` | OP |
 | `/top` | ขึ้นบล็อกบนสุด ณ จุดปัจจุบัน | `essentials.top` | ✅ |
+| `/tps` (หรือ `/ping`) | ดู TPS / MSPT ของเซิร์ฟเวอร์ และ ping ของคุณ | `essentials.tps` | ✅ |
 | `/kit [ชื่อ]` | รับ kit (ไม่ใส่ชื่อ = เมนูพร้อมสถานะ cooldown) | `essentials.kit` | ✅ |
 | — | สิทธิ์ราย kit (เมื่อ kit ตั้ง `public: false`) | `essentials.kits.<ชื่อ>` | OP |
 | — | ข้าม warmup/cooldown การวาร์ปทั้งหมด | `essentials.teleport.timer.bypass` | OP |

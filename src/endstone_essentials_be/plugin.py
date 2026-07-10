@@ -170,6 +170,12 @@ class EssentialsBE(Plugin):
             "aliases": ["etop"],
             "permissions": ["essentials.top"],
         },
+        "tps": {
+            "description": "ดู TPS ของเซิร์ฟเวอร์ และ ping ของคุณ",
+            "usages": ["/tps"],
+            "aliases": ["etps", "ping"],
+            "permissions": ["essentials.tps"],
+        },
         # --- Kit ---
         "kit": {
             "description": "รับชุดไอเทม (ไม่ใส่ชื่อ = เปิดเมนู)",
@@ -200,6 +206,7 @@ class EssentialsBE(Plugin):
             "description": "บันทึกจุดตายให้ /back", "default": True},
         "essentials.rtp": {"description": "ใช้ /rtp", "default": True},
         "essentials.top": {"description": "ใช้ /top", "default": True},
+        "essentials.tps": {"description": "ใช้ /tps", "default": True},
         "essentials.kit": {"description": "ใช้ /kit", "default": True},
         # คำสั่งแอดมิน
         "essentials.setwarp": {"description": "ใช้ /setwarp", "default": "op"},
